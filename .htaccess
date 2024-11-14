@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteBase /kasir/
+
+# Mengarahkan pengguna ke login jika belum login
+RewriteCond %{REQUEST_URI} !^/kasir/login.php$
+RewriteCond %{REQUEST_URI} !^/kasir/dashboard.php$
+RewriteRule ^(.*)$ /kasir/login.php [L]
